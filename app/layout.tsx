@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Creative Portfolio — Graphic Design, Retouching & Motion',
-  description: 'พอร์ตโฟลิโอของนักออกแบบที่เปลี่ยนไอเดียให้กลายเป็นภาพที่ชัดเจนและมีความรู้สึก',
+  title: 'Pitipong Chusawat — Graphic Design Portfolio',
+  description: 'รวมผลงานกราฟิก รีทัชภาพ และสื่อออนไลน์ของปิติพงษ์ ชูสวัสดิ์',
 };
 
 export default function RootLayout({
