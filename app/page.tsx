@@ -186,7 +186,7 @@ export default function Home() {
         <section className="hero section-container" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow">
-              <span className="status-dot" /> Graphic design · Retouching · Motion
+              <span className="status-dot" /> Graphic design · Retouching
             </p>
             <h1 id="hero-title">
               ออกแบบภาพที่
