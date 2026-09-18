@@ -29,6 +29,53 @@ type SelectedImage = {
   alt: string;
 };
 
+let paperAudioContext: AudioContext | null = null;
+
+function playPaperSound() {
+  try {
+    const context = paperAudioContext ?? new AudioContext();
+    paperAudioContext = context;
+
+    if (context.state === 'suspended') {
+      void context.resume();
+    }
+
+    const duration = 0.3;
+    const frameCount = Math.floor(context.sampleRate * duration);
+    const buffer = context.createBuffer(1, frameCount, context.sampleRate);
+    const samples = buffer.getChannelData(0);
+
+    for (let index = 0; index < frameCount; index += 1) {
+      const progress = index / frameCount;
+      const envelope = Math.pow(1 - progress, 1.55);
+      const paperTexture = 0.72 + Math.sin(progress * 125) * 0.12;
+      samples[index] = (Math.random() * 2 - 1) * envelope * paperTexture;
+    }
+
+    const source = context.createBufferSource();
+    const highPass = context.createBiquadFilter();
+    const lowPass = context.createBiquadFilter();
+    const gain = context.createGain();
+    const startTime = context.currentTime;
+
+    highPass.type = 'highpass';
+    highPass.frequency.setValueAtTime(520, startTime);
+    lowPass.type = 'lowpass';
+    lowPass.frequency.setValueAtTime(6200, startTime);
+    gain.gain.setValueAtTime(0.0001, startTime);
+    gain.gain.exponentialRampToValueAtTime(0.11, startTime + 0.018);
+    gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+    source.buffer = buffer;
+    source.playbackRate.setValueAtTime(0.95 + Math.random() * 0.12, startTime);
+    source.connect(highPass).connect(lowPass).connect(gain).connect(context.destination);
+    source.start(startTime);
+    source.stop(startTime + duration);
+  } catch {
+    // The lightbox still works when audio is unavailable or muted by the browser.
+  }
+}
+
 export function PortfolioLightbox() {
   const [selected, setSelected] = useState<SelectedImage | null>(null);
 
@@ -45,6 +92,7 @@ export function PortfolioLightbox() {
     }
 
     const openImage = (image: HTMLImageElement) => {
+      playPaperSound();
       setSelected({ src: image.currentSrc || image.src, alt: image.alt || 'ภาพผลงาน' });
     };
 
