@@ -147,18 +147,22 @@ h1 span, h2 em, h3 em { color: #a3a3a0; font-style: normal; }
 .portrait-card-studio img { object-position: 50% 43%; }
 .portrait-orbit { display: none; }
 .hanging-id {
-  position: absolute;
-  z-index: 5;
-  top: -1px;
-  right: 3.5%;
+  position: fixed;
+  z-index: 18;
+  top: 0;
+  right: clamp(12px, 2.5vw, 38px);
   width: 174px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transform-origin: 50% 0;
   animation: badge-sway 5.8s ease-in-out infinite;
+  cursor: grab;
+  will-change: transform;
 }
-.lanyard-strap { width: 12px; height: 70px; border-inline: 1px solid #333; background: repeating-linear-gradient(90deg, #171716 0 3px, #353533 3px 5px); box-shadow: 2px 0 0 rgba(23,23,22,.11); }
+.hanging-id:hover, .hanging-id:focus-within { animation: badge-hover 1.05s cubic-bezier(.45,.05,.55,.95) infinite alternate; }
+.hanging-id:active { cursor: grabbing; animation-duration: .5s; }
+.lanyard-strap { width: 12px; height: clamp(110px, 18vh, 165px); border-inline: 1px solid #333; background: repeating-linear-gradient(90deg, #171716 0 3px, #353533 3px 5px); box-shadow: 2px 0 0 rgba(23,23,22,.11); transition: height .35s ease; }
 .lanyard-clip { position: relative; z-index: 2; width: 31px; height: 26px; margin-top: -2px; display: grid; place-items: center; border: 1px solid #777772; border-radius: 5px 5px 3px 3px; background: linear-gradient(135deg, #f8f8f5, #aaa9a3 48%, #f1f1ed); box-shadow: 0 3px 7px rgba(23,23,22,.18); }
 .lanyard-clip span { width: 13px; height: 7px; border: 1px solid #6f6f69; border-radius: 99px; background: #f7f7f4; }
 .hanging-id-card { width: 174px; margin: -2px 0 0; padding: 10px; overflow: hidden; border: 1px solid #a7a7a1; border-radius: 7px; background: rgba(255,255,255,.97); box-shadow: 10px 14px 30px rgba(23,23,22,.17); text-align: left; }
@@ -390,6 +394,12 @@ a.contact-item:hover { background: #2b2b29; }
   50% { transform: rotate(-2.6deg); }
 }
 
+@keyframes badge-hover {
+  0% { transform: translateX(-8px) rotate(-7deg); }
+  50% { transform: translateX(4px) rotate(2deg); }
+  100% { transform: translateX(9px) rotate(7.5deg); }
+}
+
 @keyframes reveal-up {
   from { opacity: 0; transform: translateY(34px) scale(.985); }
   to { opacity: 1; transform: translateY(0) scale(1); }
@@ -479,10 +489,10 @@ a.contact-item:hover { background: #2b2b29; }
   .portrait-card { width: 29%; }
   .portrait-card-outdoor { left: 3%; bottom: 53px; }
   .portrait-card-studio { top: 52px; right: 3%; }
-  .hanging-id { right: 1%; width: 128px; }
-  .lanyard-strap { height: 49px; width: 9px; }
+  .hanging-id { right: 7px; width: 118px; }
+  .lanyard-strap { height: clamp(82px, 15vh, 112px); width: 9px; }
   .lanyard-clip { width: 25px; height: 21px; }
-  .hanging-id-card { width: 128px; padding: 7px; border-radius: 5px; box-shadow: 7px 10px 22px rgba(23,23,22,.17); }
+  .hanging-id-card { width: 118px; padding: 7px; border-radius: 5px; box-shadow: 7px 10px 22px rgba(23,23,22,.17); }
   .id-card-topline { font-size: 6px; margin-bottom: 6px; }
   .id-card-mark { width: 19px; height: 19px; font-size: 10px; }
   .hanging-id-card img { height: 88px; }

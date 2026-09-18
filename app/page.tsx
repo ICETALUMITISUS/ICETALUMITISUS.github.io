@@ -190,6 +190,22 @@ export default function Home() {
         </a>
       </header>
 
+      <div className="hanging-id" aria-label="ป้ายห้อยโปรไฟล์ของปิติพงษ์">
+        <div className="lanyard-strap" />
+        <div className="lanyard-clip"><span /></div>
+        <figure className="hanging-id-card">
+          <div className="id-card-topline">
+            <span className="id-card-mark">P.</span>
+            <span>PORTFOLIO PASS</span>
+          </div>
+          <img src="/profile.png" alt="ภาพปิติพงษ์บนป้ายห้อยโปรไฟล์" />
+          <figcaption>
+            <strong>PITIPONG CHUSAWAT</strong>
+            <span>GRAPHIC DESIGNER · BKK</span>
+          </figcaption>
+        </figure>
+      </div>
+
       <div id="top" className="hero-wrap">
         <section className="hero section-container" aria-labelledby="hero-title">
           <div className="hero-copy">
@@ -223,21 +239,6 @@ export default function Home() {
             <div className="portrait-backdrop" />
             <div className="portrait-orbit orbit-one" />
             <div className="portrait-orbit orbit-two" />
-            <div className="hanging-id" aria-label="ป้ายห้อยโปรไฟล์ของปิติพงษ์">
-              <div className="lanyard-strap" />
-              <div className="lanyard-clip"><span /></div>
-              <figure className="hanging-id-card">
-                <div className="id-card-topline">
-                  <span className="id-card-mark">P.</span>
-                  <span>PORTFOLIO PASS</span>
-                </div>
-                <img src="/profile.png" alt="ภาพปิติพงษ์บนป้ายห้อยโปรไฟล์" />
-                <figcaption>
-                  <strong>PITIPONG CHUSAWAT</strong>
-                  <span>GRAPHIC DESIGNER · BKK</span>
-                </figcaption>
-              </figure>
-            </div>
             <div className="portrait-frame">
               <img src="/profile.png" alt="ภาพโปรไฟล์นักออกแบบ" />
             </div>
