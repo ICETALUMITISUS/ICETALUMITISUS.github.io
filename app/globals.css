@@ -156,12 +156,12 @@ h1 span, h2 em, h3 em { color: #a3a3a0; font-style: normal; }
   flex-direction: column;
   align-items: center;
   transform-origin: 50% 0;
-  animation: badge-sway 5.8s ease-in-out infinite;
   cursor: grab;
   will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
 }
-.hanging-id:hover, .hanging-id:focus-within { animation: badge-hover 1.05s cubic-bezier(.45,.05,.55,.95) infinite alternate; }
-.hanging-id:active { cursor: grabbing; animation-duration: .5s; }
+.hanging-id:active { cursor: grabbing; }
 .lanyard-strap { width: 12px; height: clamp(110px, 18vh, 165px); border-inline: 1px solid #333; background: repeating-linear-gradient(90deg, #171716 0 3px, #353533 3px 5px); box-shadow: 2px 0 0 rgba(23,23,22,.11); transition: height .35s ease; }
 .lanyard-clip { position: relative; z-index: 2; width: 31px; height: 26px; margin-top: -2px; display: grid; place-items: center; border: 1px solid #777772; border-radius: 5px 5px 3px 3px; background: linear-gradient(135deg, #f8f8f5, #aaa9a3 48%, #f1f1ed); box-shadow: 0 3px 7px rgba(23,23,22,.18); }
 .lanyard-clip span { width: 13px; height: 7px; border: 1px solid #6f6f69; border-radius: 99px; background: #f7f7f4; }
@@ -387,17 +387,6 @@ a.contact-item:hover { background: #2b2b29; }
 @keyframes float-studio {
   0%, 100% { transform: translateY(0) rotate(6deg); }
   50% { transform: translateY(9px) rotate(4.5deg); }
-}
-
-@keyframes badge-sway {
-  0%, 100% { transform: rotate(3.2deg); }
-  50% { transform: rotate(-2.6deg); }
-}
-
-@keyframes badge-hover {
-  0% { transform: translateX(-8px) rotate(-7deg); }
-  50% { transform: translateX(4px) rotate(2deg); }
-  100% { transform: translateX(9px) rotate(7.5deg); }
 }
 
 @keyframes reveal-up {
