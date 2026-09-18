@@ -146,34 +146,8 @@ h1 span, h2 em, h3 em { color: #a3a3a0; font-style: normal; }
 .portrait-card-studio { top: 72px; right: 13%; aspect-ratio: 1; transform: rotate(6deg); animation: float-studio 7.2s ease-in-out infinite; }
 .portrait-card-studio img { object-position: 50% 43%; }
 .portrait-orbit { display: none; }
-.hanging-id {
-  position: fixed;
-  z-index: 18;
-  top: 0;
-  right: clamp(12px, 2.5vw, 38px);
-  width: 174px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform-origin: 50% 0;
-  cursor: grab;
-  will-change: transform;
-  backface-visibility: hidden;
-  transform: translate3d(0,0,0);
-}
-.hanging-id:active { cursor: grabbing; }
-.lanyard-strap { width: 12px; height: clamp(110px, 18vh, 165px); border-inline: 1px solid #333; background: repeating-linear-gradient(90deg, #171716 0 3px, #353533 3px 5px); box-shadow: 2px 0 0 rgba(23,23,22,.11); transition: height .35s ease; }
-.lanyard-clip { position: relative; z-index: 2; width: 31px; height: 26px; margin-top: -2px; display: grid; place-items: center; border: 1px solid #777772; border-radius: 5px 5px 3px 3px; background: linear-gradient(135deg, #f8f8f5, #aaa9a3 48%, #f1f1ed); box-shadow: 0 3px 7px rgba(23,23,22,.18); }
-.lanyard-clip span { width: 13px; height: 7px; border: 1px solid #6f6f69; border-radius: 99px; background: #f7f7f4; }
-.hanging-id-card { width: 174px; margin: -2px 0 0; padding: 10px; overflow: hidden; border: 1px solid #a7a7a1; border-radius: 7px; background: rgba(255,255,255,.97); box-shadow: 10px 14px 30px rgba(23,23,22,.17); text-align: left; }
-.id-card-topline { display: flex; align-items: center; justify-content: space-between; gap: 7px; margin-bottom: 8px; color: #777772; font: 500 8px/1 'DM Mono', monospace; letter-spacing: .08em; }
-.id-card-mark { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 4px; background: var(--ink); color: #fff; font: 800 12px/1 'Manrope', sans-serif; letter-spacing: 0; }
-.hanging-id-card img { width: 100%; height: 126px; object-fit: cover; object-position: 50% 35%; border-radius: 3px; filter: saturate(.82) contrast(1.04); }
-.hanging-id-card figcaption { padding: 10px 2px 2px; }
-.hanging-id-card strong { display: block; color: var(--ink); font: 700 11px/1.3 'Manrope', sans-serif; letter-spacing: -.01em; }
-.hanging-id-card figcaption span { display: block; margin-top: 5px; color: #858580; font: 500 7px/1.2 'DM Mono', monospace; letter-spacing: .08em; }
 .visual-label { position: absolute; z-index: 3; display: inline-flex; align-items: center; gap: 7px; padding: 9px 11px; border: 1px solid var(--ink); border-radius: 4px; background: #fff; color: var(--ink); font-size: 11px; }
-.label-top { top: 60px; left: 13%; }
+.label-top { top: 60px; right: 13%; }
 .label-bottom { bottom: 55px; left: 12%; flex-direction: column; align-items: flex-start; gap: 6px; line-height: 1.3; }
 .label-index { color: var(--ink); font-size: 10px; }
 .label-line { width: 70px; height: 1px; background: var(--ink); }
@@ -478,17 +452,7 @@ a.contact-item:hover { background: #2b2b29; }
   .portrait-card { width: 29%; }
   .portrait-card-outdoor { left: 3%; bottom: 53px; }
   .portrait-card-studio { top: 52px; right: 3%; }
-  .hanging-id { right: 7px; width: 118px; }
-  .lanyard-strap { height: clamp(82px, 15vh, 112px); width: 9px; }
-  .lanyard-clip { width: 25px; height: 21px; }
-  .hanging-id-card { width: 118px; padding: 7px; border-radius: 5px; box-shadow: 7px 10px 22px rgba(23,23,22,.17); }
-  .id-card-topline { font-size: 6px; margin-bottom: 6px; }
-  .id-card-mark { width: 19px; height: 19px; font-size: 10px; }
-  .hanging-id-card img { height: 88px; }
-  .hanging-id-card figcaption { padding-top: 7px; }
-  .hanging-id-card strong { font-size: 8px; }
-  .hanging-id-card figcaption span { font-size: 5px; }
-  .label-top { top: 24px; left: 5%; }
+  .label-top { top: 24px; right: 5%; }
   .label-bottom { left: 5%; bottom: 24px; }
   .tool-strip { padding-block: 27px; }
   .work-section, .process-section { padding-block: 90px; }

@@ -9,7 +9,6 @@ import {
 } from '@/components/ui/dialog';
 
 const lightboxSelector = [
-  '.hanging-id-card img',
   '.hero-visual img',
   '.poster-media img',
   '.retouch-feature img',

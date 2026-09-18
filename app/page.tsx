@@ -11,7 +11,6 @@ import {
 } from 'lucide-react';
 import { RetouchLightbox } from '@/components/retouch-lightbox';
 import { PortfolioLightbox } from '@/components/portfolio-lightbox';
-import { HangingProfileBadge } from '@/components/hanging-profile-badge';
 
 const tools = [
   { name: 'Illustrator', file: '/illustrator.png' },
@@ -190,8 +189,6 @@ export default function Home() {
           ติดต่อผม <ArrowUpRight size={16} strokeWidth={1.8} />
         </a>
       </header>
-
-      <HangingProfileBadge />
 
       <div id="top" className="hero-wrap">
         <section className="hero section-container" aria-labelledby="hero-title">
