@@ -161,6 +161,14 @@ const brightSkyBanners = [
   },
 ];
 
+const brightSkyLocations = [
+  { src: '/brightsky/actual-location/location-01.png', alt: 'ภาพสื่อประชาสัมพันธ์การท่องเที่ยวที่ติดตั้งในพื้นที่จริง' },
+  { src: '/brightsky/actual-location/location-02.png', alt: 'ภาพจอประชาสัมพันธ์บริเวณสายพานรับกระเป๋า' },
+  { src: '/brightsky/actual-location/location-03.png', alt: 'ภาพจอประชาสัมพันธ์สถานที่ท่องเที่ยวบริเวณสายพานรับกระเป๋า' },
+  { src: '/brightsky/actual-location/location-04.png', alt: 'ภาพรวมพื้นที่ติดตั้งจอประชาสัมพันธ์ภายในสนามบิน' },
+  { src: '/brightsky/actual-location/location-05.png', alt: 'ภาพสื่อท่องเที่ยวที่แสดงบนจอในพื้นที่สนามบิน' },
+];
+
 export default function Home() {
   return (
     <main className="site-shell">
@@ -565,6 +573,18 @@ export default function Home() {
                   <h4>{work.title}</h4>
                   <p>{work.description}</p>
                 </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="orientation-heading internship-heading">
+            <span>ภาพสถานที่จริง</span>
+            <p>ตัวอย่างผลงานที่นำไปติดตั้งและเปิดใช้งานจริงบนจอประชาสัมพันธ์ภายในพื้นที่สนามบิน</p>
+          </div>
+          <div className="actual-location-gallery" aria-label="ภาพผลงานที่ติดตั้งในสถานที่จริง">
+            {brightSkyLocations.map((work) => (
+              <figure className="actual-location-frame" key={work.src}>
+                <img src={work.src} alt={work.alt} loading="lazy" decoding="async" />
               </figure>
             ))}
           </div>
