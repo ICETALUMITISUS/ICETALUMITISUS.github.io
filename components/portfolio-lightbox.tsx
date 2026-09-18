@@ -31,7 +31,7 @@ type SelectedImage = {
 
 let paperAudioContext: AudioContext | null = null;
 
-function playPaperSound() {
+function playPaperTearSound() {
   try {
     const context = paperAudioContext ?? new AudioContext();
     paperAudioContext = context;
@@ -40,16 +40,33 @@ function playPaperSound() {
       void context.resume();
     }
 
-    const duration = 0.3;
+    const duration = 0.58;
     const frameCount = Math.floor(context.sampleRate * duration);
     const buffer = context.createBuffer(1, frameCount, context.sampleRate);
     const samples = buffer.getChannelData(0);
 
+    let crackle = 0;
+
     for (let index = 0; index < frameCount; index += 1) {
       const progress = index / frameCount;
-      const envelope = Math.pow(1 - progress, 1.55);
-      const paperTexture = 0.72 + Math.sin(progress * 125) * 0.12;
-      samples[index] = (Math.random() * 2 - 1) * envelope * paperTexture;
+      const envelope = Math.pow(1 - progress, 0.55);
+
+      if (Math.random() > 0.965) {
+        crackle = 0.9 + Math.random() * 0.8;
+      }
+
+      crackle *= 0.86;
+      const paperFibers =
+        0.38 +
+        0.34 *
+          Math.abs(
+            Math.sin(progress * 105 + Math.sin(progress * 31) * 2.8),
+          );
+
+      samples[index] =
+        (Math.random() * 2 - 1) *
+        envelope *
+        Math.min(1.5, paperFibers + crackle);
     }
 
     const source = context.createBufferSource();
@@ -59,15 +76,17 @@ function playPaperSound() {
     const startTime = context.currentTime;
 
     highPass.type = 'highpass';
-    highPass.frequency.setValueAtTime(520, startTime);
+    highPass.frequency.setValueAtTime(650, startTime);
     lowPass.type = 'lowpass';
-    lowPass.frequency.setValueAtTime(6200, startTime);
+    lowPass.frequency.setValueAtTime(7600, startTime);
+    lowPass.frequency.exponentialRampToValueAtTime(2600, startTime + duration);
     gain.gain.setValueAtTime(0.0001, startTime);
-    gain.gain.exponentialRampToValueAtTime(0.11, startTime + 0.018);
+    gain.gain.exponentialRampToValueAtTime(0.13, startTime + 0.012);
+    gain.gain.exponentialRampToValueAtTime(0.095, startTime + duration * 0.55);
     gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
 
     source.buffer = buffer;
-    source.playbackRate.setValueAtTime(0.95 + Math.random() * 0.12, startTime);
+    source.playbackRate.setValueAtTime(0.92 + Math.random() * 0.08, startTime);
     source.connect(highPass).connect(lowPass).connect(gain).connect(context.destination);
     source.start(startTime);
     source.stop(startTime + duration);
@@ -92,7 +111,7 @@ export function PortfolioLightbox() {
     }
 
     const openImage = (image: HTMLImageElement) => {
-      playPaperSound();
+      playPaperTearSound();
       setSelected({ src: image.currentSrc || image.src, alt: image.alt || 'ภาพผลงาน' });
     };
 
