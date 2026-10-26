@@ -107,8 +107,9 @@ h1, h2, h3 { font-family: 'Manrope', 'Noto Sans Thai', sans-serif; line-height: 
 }
 .eyebrow { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 29px; padding: 7px 11px; border: 1px solid var(--line); border-radius: 99px; color: #666662; background: rgba(255,255,255,.7); }
 .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ink); }
-h1 { max-width: 930px; margin-bottom: 27px; font-size: clamp(4rem, 7.4vw, 7.3rem); font-weight: 600; }
-h1 span, h2 em, h3 em { color: #a3a3a0; font-style: normal; }
+.hero-title { width: 100%; max-width: 930px; min-height: 2.08em; margin-bottom: 27px; font-size: 94px; font-weight: 600; line-height: 1.04; }
+.hero-title-line { display: block; white-space: nowrap; }
+.hero-title-muted, h2 em, h3 em { color: #a3a3a0; font-style: normal; }
 .hero-description { max-width: 660px; margin-bottom: 32px; color: #777773; font-size: 17px; line-height: 1.8; }
 .hero-actions { display: flex; align-items: center; justify-content: center; gap: 10px; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 48px; padding: 0 21px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); font-size: 14px; transition: transform .2s ease, background .2s ease, color .2s ease; }
@@ -417,6 +418,7 @@ a.contact-item:hover { background: #2b2b29; }
   .section-container { padding-inline: 22px; }
   .desktop-nav { gap: 17px; margin-left: 20px; }
   .hero { min-height: 900px; padding-top: 62px; }
+  .hero-title { max-width: 720px; font-size: 66px; }
   .hero-visual { width: calc(100% + 44px); }
   .tool-strip { grid-template-columns: 1fr; gap: 22px; }
   .tool-list { justify-content: flex-start; flex-wrap: wrap; gap: 17px 30px; }
@@ -443,7 +445,7 @@ a.contact-item:hover { background: #2b2b29; }
   .brand-label, .desktop-nav { display: none; }
   .header-link { min-height: 38px; padding-inline: 13px; }
   .hero { min-height: auto; padding: 58px 16px 0; }
-  h1 { font-size: clamp(3.2rem, 15vw, 5rem); }
+  .hero-title { max-width: 100%; font-size: 40px; }
   .hero-description { font-size: 16px; }
   .hero-actions { flex-wrap: wrap; }
   .hero-visual { width: calc(100% + 32px); min-height: 430px; margin-top: 46px; }
@@ -503,4 +505,12 @@ a.contact-item:hover { background: #2b2b29; }
   .contact-card { min-height: 320px; display: block; padding: 36px 25px 30px; }
   .contact-actions { margin-top: 34px; }
   .site-footer { min-height: 145px; display: grid; gap: 12px; align-content: center; padding-block: 22px; }
+}
+
+@media (max-width: 520px) {
+  .hero-title { font-size: 32px; }
+}
+
+@media (max-width: 390px) {
+  .hero-title { font-size: 28px; }
 }

@@ -196,10 +196,9 @@ export default function Home() {
             <p className="eyebrow">
               <span className="status-dot" /> Graphic design · Retouching
             </p>
-            <h1 id="hero-title">
-              สวัสดีครับ ผมปิติพงษ์
-              <br />
-              <span>นี่คือผลงานของผม</span>
+            <h1 id="hero-title" className="hero-title">
+              <span className="hero-title-line">สวัสดีครับ ผมปิติพงษ์</span>
+              <span className="hero-title-line hero-title-muted">นี่คือผลงานของผม</span>
             </h1>
             <p className="hero-description">
               ผมทำงานกราฟิก รีทัชภาพ และออกแบบสื่อสำหรับใช้งานจริง
