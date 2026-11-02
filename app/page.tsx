@@ -201,8 +201,8 @@ export default function Home() {
               <span className="hero-title-line hero-title-muted">นี่คือผลงานของผม</span>
             </h1>
             <p className="hero-description">
-              ผมทำงานกราฟิก รีทัชภาพ และออกแบบสื่อสำหรับใช้งานจริง
-              หน้านี้รวบรวมงานที่ผมเคยทำและงานที่ชอบไว้ด้วยกัน
+              รวมงานกราฟิกและรีทัชที่ผมเคยทำ ทั้งโปสเตอร์ แบนเนอร์
+              งานออกแบบหน้าเว็บ และผลงานระหว่างฝึกงาน
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#work">
@@ -270,7 +270,6 @@ export default function Home() {
           </p>
           <p>
             งานที่ผมถนัดคือโปสเตอร์ แบนเนอร์ รีทัชภาพบุคคล และสื่อออนไลน์
-            ผมยังชอบเรียนรู้วิธีใหม่ ๆ เพื่อให้งานแต่ละชิ้นออกมาดีขึ้นกว่าเดิม
           </p>
         </div>
         <div className="about-aside">
@@ -332,7 +331,7 @@ export default function Home() {
 
           <div className="orientation-heading horizontal-heading">
             <span>Horizontal posters</span>
-            <p>งานแนวนอนสำหรับเว็บไซต์และสื่อออนไลน์ ผมจัดข้อมูลให้กวาดตาอ่านได้เร็ว</p>
+            <p>แบนเนอร์โปรโมตนิยายและช่องทางเติมเงินสำหรับเว็บไซต์ Land Novel</p>
           </div>
           <div className="poster-horizontal-grid">
             {horizontalPosters.map((work) => (
@@ -471,11 +470,11 @@ export default function Home() {
             <span className="category-number">05</span>
             <div>
               <p className="section-kicker">Land Novel — Web & visual design</p>
-              <h3>งานออกแบบ Land Novel<br /><em>ทั้งเว็บไซต์และสื่อโปรโมต</em></h3>
+              <h3>Land Novel<br /><em>ออกแบบหน้าเว็บและภาพโปรโมต</em></h3>
             </div>
             <p>
-              งานชุดนี้มีทั้งหน้าตาเว็บไซต์และภาพประชาสัมพันธ์
-              ผมพยายามคุมสีและรูปแบบให้ดูเป็นงานของแบรนด์เดียวกัน
+              ผมออกแบบหน้าหลัก หน้ารายละเอียดนิยาย หน้าเติมเงิน และภาพโปรโมต
+              โดยใช้สีและรูปแบบให้เข้ากัน
             </p>
           </div>
 
@@ -517,7 +516,7 @@ export default function Home() {
             <div>
               <p className="project-type">Bright Sky Media Co., Ltd.</p>
               <h4>Graphic Design Internship</h4>
-              <p>ช่วงฝึกงานผมได้ลองทำงานตั้งแต่รับบรีฟ วางแบบ แก้ตามความคิดเห็นของทีม และเตรียมไฟล์ตามขนาดที่ใช้จริง</p>
+              <p>ระหว่างฝึกงาน ผมรับบรีฟจากทีม ออกแบบ และปรับแก้ตามความคิดเห็นก่อนเตรียมไฟล์ส่งงาน</p>
             </div>
           </div>
 
@@ -538,7 +537,7 @@ export default function Home() {
           </figure>
 
           <div className="orientation-heading internship-heading">
-            <span>Tourism display design</span>
+            <span>งานออกแบบป้ายท่องเที่ยว</span>
             <p>งานป้ายแนวตั้งที่ทำตามขนาดสำหรับผลิตจริง มีทั้งแบบที่ระบุขนาดและไฟล์อาร์ตเวิร์ก</p>
           </div>
           <div className="internship-display-grid">
@@ -558,7 +557,7 @@ export default function Home() {
           </div>
 
           <div className="orientation-heading internship-heading">
-            <span>Tourism banners</span>
+            <span>แบนเนอร์แนะนำสถานที่ท่องเที่ยว</span>
             <p>แบนเนอร์แนะนำสถานที่ท่องเที่ยว ผมใช้ภาพจริงเป็นส่วนหลักและใส่ชื่อทั้งภาษาไทยกับอังกฤษ</p>
           </div>
           <div className="internship-banner-grid">
@@ -594,7 +593,7 @@ export default function Home() {
         <div className="section-heading process-heading">
           <div>
             <p className="section-kicker">Work process / 03</p>
-            <h2 id="process-title">ขั้นตอนการทำงาน<br /><em>จากโจทย์สู่ชิ้นงานจริง</em></h2>
+            <h2 id="process-title">วิธีทำงานของผม<br /><em>ตั้งแต่รับบรีฟจนส่งไฟล์</em></h2>
           </div>
         </div>
         <div className="process-grid">
